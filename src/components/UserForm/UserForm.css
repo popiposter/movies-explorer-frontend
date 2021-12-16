@@ -1,0 +1,150 @@
+.user-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+  max-width: 396px;
+}
+
+.user-form__title {
+  margin: 40px auto 30px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+}
+
+.user-form__form {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.user-form__form-field {
+  margin-top: 10px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 12px;
+  color: #A0A0A0;
+}
+
+.user-form__form-input {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16px;
+  border: 0;
+  border-radius: 8px;
+  background: #F9F9F9;
+  padding: 15px;
+  box-sizing: border-box;
+  transition: outline-color .5s;
+}
+
+.user-form__form-input:focus {
+  outline-color: #2BE080;
+}
+
+
+.user-form__form-input-error {
+  margin-top: 10px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 12px;
+  color: #FF3055;
+}
+
+.user-form__bottom {
+  width: 100%;
+  max-width: 396px;
+}
+
+.user-form__button-submit {
+  margin-top: 69px;
+  min-height: 45px;
+  border: 0;
+  border-radius: 3px;
+  padding: 0;
+  background: #3456F3;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #FFFFFF;
+  cursor: pointer;
+  width: 100%;
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+.user-form__button-submit:hover {
+  opacity: .5;
+}
+
+.user-form__button-submit:disabled {
+  background: #EBEBEB;
+}
+
+.user-form__link-wrapper {
+  display: flex;
+  gap: 6px;
+  margin-top: 16px;
+}
+
+.user-form__text {
+  margin: 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  color: #A0A0A0;
+}
+
+.user-form__link {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  text-decoration: none;
+  color: #3456F3;
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+.user-form__link:hover {
+  opacity: .5;
+}
+
+@media screen and (max-width: 385px) {
+  .user-form {
+    align-items: center;
+  }
+  .user-form__title {
+    margin-top: 50px;
+  }
+
+  .user-form__bottom {
+    margin-top: auto;
+  }
+
+  .user-form__button-submit {
+    margin-top: 0;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .user-form__link {
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .user-form__text {
+    font-size: 12px;
+    line-height: 15px;
+  }
+}

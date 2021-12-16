@@ -1,0 +1,27 @@
+.saved-movies {
+  font-family: 'Inter', Arial, sans-serif;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 466px);
+}
+
+@media screen and (max-width: 856px) {
+  .saved-movies {
+    min-height: calc(100vh - 490px);
+  }
+}
+
+@media screen and (max-width: 384px) {
+  .saved-movies {
+    min-height: calc(100vh - 582px);
+  }
+}
+
+@media screen and (max-width: 375px) {
+
+  .saved-movies {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
