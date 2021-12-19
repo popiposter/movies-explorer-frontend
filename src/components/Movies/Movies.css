@@ -1,0 +1,70 @@
+.movies {
+  font-family: 'Inter', Arial, sans-serif;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 466px);
+}
+
+.movies__more-btn {
+  padding: 0;
+  width: 100%;
+  height: 36px;
+  border: 0;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+  background: #F9F9F9;
+  border-radius: 6px;
+  cursor: pointer;
+  align-self: center;
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+.movies__more-btn:hover {
+  opacity: .5;
+}
+
+@media screen and (max-width: 1279px) {
+  .movies__more-btn {
+    max-width: 850px;
+  }
+}
+
+@media screen and (max-width: 989px) {
+  .movies__more-btn {
+    max-width: 560px;
+  }
+}
+
+@media screen and (max-width: 856px) {
+  .movies {
+    min-height: calc(100vh - 490px);
+  }
+}
+
+@media screen and (max-width: 636px) {
+  .movies__more-btn {
+    max-width: 270px;
+  }
+}
+
+@media screen and (max-width: 384px) {
+  .movies {
+    min-height: calc(100vh - 594px);
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .movies__more-btn {
+    max-width: 300px;
+  }
+
+  .movies {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}

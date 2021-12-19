@@ -1,0 +1,282 @@
+.header {
+  font-family: 'Inter', Arial, sans-serif;
+  min-height: 74px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+}
+
+.header_page-main {
+  background: #073042;
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+}
+
+.header__nav-menu {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: baseline;
+}
+
+.header__nav-menu_page-main {
+  gap: 30px;
+}
+
+.header__nav-link {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  text-decoration: none;
+  color: #000;
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+.header__nav-link_active {
+  text-decoration: underline;
+}
+
+.header__nav-link_profile {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.header__nav-menu-item_home {
+  display: none;
+}
+
+.header__nav-menu-item_profile {
+  width: 100px;
+  height: 32px;
+  background: #F9F9F9;
+  border-radius: 20px;
+}
+
+.header__nav-link_page-main {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  text-decoration: none;
+  color: #000;
+}
+
+.header__nav-menu-item_before-btn {
+  margin-right: 30px;
+}
+
+.header__nav-link_light {
+  color: #fff;
+}
+
+.header__nav-link_bold {
+  font-weight: 500;
+}
+
+.header__btn {
+  padding: 0;
+  border: none;
+  font-style: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  cursor: pointer;
+}
+
+.header__btn_login {
+  width: 76px;
+  height: 32px;
+  border-radius: 3px;
+  background: #2BE080;
+}
+
+.header__btn_profile {
+  width: 100px;
+  height: 32px;
+  border-radius: 20px;
+  background: #F9F9F9;
+}
+
+.header__burger-btn {
+  width: 44px;
+  height: 44px;
+  background: none;
+  display: none;
+  /*z-index: 1;*/
+}
+
+.header__burger-btn-img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.header__burger-btn-close {
+  margin-top: 15px;
+  margin-right: 30px;
+  align-self: flex-end;
+}
+
+.header__nav-link:hover {
+  opacity: .5;
+}
+
+.header__drawer-menu-overlay {
+  display: flex;
+  position: fixed;
+  justify-content: flex-end;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, .3);
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.6s;
+  pointer-events: none;
+  user-select: none;
+}
+
+.header__menu {
+  z-index: 1;
+}
+
+.header__drawer-menu {
+  width: 100%;
+  z-index: 2;
+  background: #fff;
+}
+
+.header__drawer-nav-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .header__menu-open {
+    width: 80vw;
+  }
+
+  .header_page-main {
+    width: 100%;
+  }
+
+  .header__burger-btn {
+    display: block;
+  }
+
+  .header__menu {
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #373331;
+    color: #F0F0F0;
+    height: 100%;
+    width: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .header__menu-open .header__menu {
+    width: 67vw;
+  }
+
+  .header__menu-open .header__drawer-menu-overlay {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .header__menu-open .header__burger-btn-open {
+    display: none;
+  }
+
+  .header__nav-menu-item_home {
+    display: block;
+  }
+
+  .header__nav-menu-item_before-btn {
+    margin-right: 0;
+  }
+
+  .header__drawer-menu {
+    height: 100%;
+  }
+
+  .header__drawer-menu-elements {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+  }
+
+  .header__nav {
+    height: 100%;
+    padding-top: 105px;
+    padding-bottom: 90px;
+    flex-direction: column;
+  }
+
+  .header__nav-menu {
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+  }
+
+  .header__nav-menu_page-main {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .header__nav-link {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .header__nav-link_page-main {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .header__nav {
+    padding-top: 99px;
+    padding-bottom: 45px;
+  }
+
+  .header__burger-btn-close {
+    margin-right: 14px;
+  }
+
+  .header__nav-link_page-main {
+    font-size: 10px;
+    line-height: 16px;
+  }
+
+  .header__login-btn {
+    width: 54px;
+    height: 26px;
+  }
+
+  .header__menu-open .header__menu {
+    width: 100%;
+  }
+}

@@ -1,0 +1,198 @@
+.about-me__student {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 66px;
+  gap: 20px;
+}
+
+.about-me__student-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 600px;
+}
+
+.about-me__student-title {
+  margin: 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 50px;
+  line-height: 58px;
+  letter-spacing: -0.04em;
+}
+
+.about-me__student-subtitle {
+  margin: 18px 0 0;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.about-me__student-text {
+  margin: 26px 0 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.about-me__student-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.about-me__student-link-item {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.about-me__student-link {
+  text-decoration: none;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000;
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+.about-me__student-link:hover {
+  opacity: .5;
+}
+
+.about-me__student-link-item:last-of-type {
+  margin-right: 0;
+}
+
+.about-me__student-pic {
+  max-width: 270px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.about-me__portfolio {
+  margin-top: 100px;
+}
+
+.about-me__portfolio-title {
+  margin: 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 20px;
+  color: #A0A0A0;
+}
+
+.about-me__portfolio-links {
+  list-style: none;
+  margin: 30px 0 0;
+  padding: 0;
+}
+
+.about-me__portfolio-link {
+  display: flex;
+  justify-content: space-between;
+  text-decoration: none;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 50px;
+  letter-spacing: -0.04em;
+  color: #000000;
+  padding-bottom: 19px;
+  margin-top: 20px;
+  border-bottom: #E8E8E8 solid 1px;
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+.about-me__portfolio-link:hover {
+  opacity: .5;
+}
+
+@media screen and (max-width: 856px) {
+  .about-me__student-info {
+    max-width: 364px;
+  }
+
+  .about-me__student-title {
+    font-size: 40px;
+    line-height: 40px;
+  }
+
+  .about-me__student-subtitle {
+    margin-top: 16px;
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .about-me__student-text {
+    margin-top: 20px;
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .about-me__student-pic {
+    max-width: 255px;
+  }
+
+  .about-me__portfolio-link {
+    font-size: 28px;
+    line-height: 50px;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .about-me__student {
+    flex-direction: column-reverse;
+    margin-top: 60px;
+  }
+
+  .about-me__student-pic {
+    width: 100%;
+    max-width: 292px;
+    margin: 0 auto;
+  }
+
+  .about-me__student-title {
+    margin-top: 40px;
+    font-size: 30px;
+    line-height: 36px;
+  }
+
+  .about-me__student-subtitle {
+    margin-top: 20px;
+    font-size: 11px;
+    line-height: 16px;
+  }
+
+  .about-me__student-text {
+    margin-top: 20px;
+    font-size: 11px;
+    line-height: 16px;
+  }
+
+  .about-me__student-links {
+    margin-top: 40px;
+  }
+
+  .about-me__portfolio {
+    margin-top: 69px;
+  }
+
+  .about-me__portfolio-title {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .about-me__portfolio-links {
+    margin-top: 40px;
+  }
+
+  .about-me__portfolio-link {
+    font-size: 18px;
+    line-height: 28px
+  }
+}
