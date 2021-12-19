@@ -7,15 +7,17 @@ import deletePath from '../../images/delete-btn.svg';
 function MoviesCard(props) {
   const {card} = props;
   const {name, link, duration, isSaved, isDeleteEnabled} = card;
-  const cardStyle = {backgroundImage: `url(${link})`};
+  // const cardStyle = {backgroundImage: `url(${link})`};
   const btnImg = isDeleteEnabled ? deletePath : isSaved ? savedPath : notSavedPath;
   const btnName = isDeleteEnabled || isSaved ? 'Удалить' : 'Сохранить';
 
   return (
     <li className="movies__item">
-      <div
+      <img
         className="movies__image"
-        style={cardStyle}
+        src={link}
+        alt={name}
+        // style={cardStyle}
       />
       <div className="movies__description">
         <div className="movies__title-wrapper">

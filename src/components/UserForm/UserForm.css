@@ -8,7 +8,7 @@
 }
 
 .user-form__title {
-  margin: 40px auto 30px;
+  margin: 40px 0 30px;
   font-style: normal;
   font-weight: 500;
   font-size: 24px;
@@ -118,6 +118,11 @@
 
 .user-form__link:hover {
   opacity: .5;
+}
+@media screen and (max-width: 856px) {
+  .user-form__title {
+    text-align: center;
+  }
 }
 
 @media screen and (max-width: 385px) {
