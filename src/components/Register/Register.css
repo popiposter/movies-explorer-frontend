@@ -10,7 +10,7 @@
   box-sizing: border-box;
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 385px) {
   .register {
     padding: 56px 30px 30px;
     justify-content: space-between;

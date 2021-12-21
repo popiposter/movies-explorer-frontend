@@ -119,11 +119,6 @@
 .user-form__link:hover {
   opacity: .5;
 }
-@media screen and (max-width: 856px) {
-  .user-form__title {
-    text-align: center;
-  }
-}
 
 @media screen and (max-width: 385px) {
   .user-form {

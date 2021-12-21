@@ -37,6 +37,12 @@
   background: none;
   border: 0;
   cursor: pointer;
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+.movies__btn:hover {
+  opacity: .5;
 }
 
 .movies__btn-img {
