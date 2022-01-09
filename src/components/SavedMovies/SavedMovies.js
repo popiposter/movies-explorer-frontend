@@ -1,44 +1,39 @@
+import PropTypes from 'prop-types'
 import React from 'react';
 import './SavedMovies.css';
 import SearchForm from '../SearchForm/SearchForm';
-import movie1Path from '../../images/movie-1.jpg';
-import movie3Path from '../../images/movie-3.jpg';
 import MoviesCardList from '../MoviesCardList/MoviesCardList';
 
-function SavedMovies() {
-  const defaultMovies = [
-    {
-      id: 3,
-      name: '33 слова о дизайне',
-      link: movie3Path,
-      duration: '1ч42м',
-      isDeleteEnabled: true
-    },
-    {
-      id: 7,
-      name: '33 слова о дизайне',
-      link: movie3Path,
-      duration: '1ч42м',
-      isDeleteEnabled: true
-    },
-    {
-      id: 9,
-      name: '33 слова о дизайне',
-      link: movie1Path,
-      duration: '1ч42м',
-      isDeleteEnabled: true
-    }
-  ];
+function SavedMovies(props) {
+  const { savedMovies, savedFilter, onSearch, messages, onShortsToggle, isSavedMoviesPage, onDelete } = props;
 
   return (
     <>
-      <SearchForm handleIsLoading={() => {
-      }}/>
+      <SearchForm
+        onSubmit={onSearch}
+        onShortsToggle={onShortsToggle}
+        queryRequiredMsg={''}
+        savedFilter={savedFilter}
+      />
       <section className="page__section saved-movies">
-        <MoviesCardList cards={defaultMovies}/>
+        <MoviesCardList cards={savedMovies} keyName={'_id'} isSavedMoviesPage={isSavedMoviesPage} onSave={onDelete}/>
+        {!savedMovies.length && (savedFilter.query.length > 0 || savedFilter.shorts)  && (
+          <p className="saved-movies__search-results-msg">
+            {messages.noResultsMSG}
+          </p>)}
       </section>
     </>
   );
 }
 
 export default SavedMovies;
+
+SavedMovies.propTypes = {
+  isSavedMoviesPage: PropTypes.bool,
+  messages: PropTypes.object,
+  onDelete: PropTypes.func,
+  onSearch: PropTypes.func,
+  onShortsToggle: PropTypes.func,
+  savedFilter: PropTypes.object,
+  savedMovies: PropTypes.array
+}

@@ -108,6 +108,7 @@
   opacity: 1;
   transition: opacity 0.5s;
 }
+
 .about-me__portfolio-link:hover {
   opacity: .5;
 }

@@ -1,0 +1,15 @@
+.protected-route {
+  background: #fff;
+  height: calc(100vh - 120px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px;
+}
+
+@media screen and (max-width: 390px) {
+  .protected-route {
+    padding: 30px;
+    height: calc(100vh - 60px);
+  }
+}

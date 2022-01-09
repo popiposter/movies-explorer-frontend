@@ -6,6 +6,11 @@
   min-height: calc(100vh - 466px);
 }
 
+.saved-movies__search-results-msg {
+  padding: 0;
+  text-align: center;
+}
+
 @media screen and (max-width: 856px) {
   .saved-movies {
     min-height: calc(100vh - 490px);

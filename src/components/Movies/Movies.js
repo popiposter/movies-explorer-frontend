@@ -1,92 +1,65 @@
-import React, {useState} from 'react';
+import React, { useContext } from 'react';
+import PropTypes from 'prop-types';
 import './Movies.css';
 import SearchForm from '../SearchForm/SearchForm';
 import MoviesCardList from '../MoviesCardList/MoviesCardList';
-import movie1Path from '../../images/movie-1.jpg';
-import movie2Path from '../../images/movie-2.jpg';
-import movie3Path from '../../images/movie-3.jpg';
-import movie4Path from '../../images/movie-4.jpg';
 import Preloader from '../Preloader/Preloader';
+import { RequestStatusContext } from '../../contexts/RequestStatusContext';
 
-function Movies() {
-  const defaultMovies = [
-    {
-      id: 1,
-      name: '33 слова о дизайне',
-      link: movie1Path,
-      duration: '1ч42м',
-      isSaved: false
-    },
-    {
-      id: 2,
-      name: '33 слова о дизайне',
-      link: movie2Path,
-      duration: '1ч42м',
-      isSaved: false
-    },
-    {
-      id: 3,
-      name: '33 слова о дизайне',
-      link: movie3Path,
-      duration: '1ч42м',
-      isSaved: true
-    },
-    {
-      id: 4,
-      name: '33 слова о дизайне',
-      link: movie4Path,
-      duration: '1ч42м',
-      isSaved: false
-    },
-    {
-      id: 5,
-      name: '33 слова о дизайне',
-      link: movie1Path,
-      duration: '1ч42м',
-      isSaved: false
-    },
-    {
-      id: 6,
-      name: '33 слова о дизайне',
-      link: movie2Path,
-      duration: '1ч42м',
-      isSaved: false
-    },
-    {
-      id: 7,
-      name: '33 слова о дизайне',
-      link: movie3Path,
-      duration: '1ч42м',
-      isSaved: true
-    },
-    {
-      id: 8,
-      name: '33 слова о дизайне',
-      link: movie4Path,
-      duration: '1ч42м',
-      isSaved: false
-    },
-    {
-      id: 9,
-      name: '33 слова о дизайне',
-      link: movie1Path,
-      duration: '1ч42м',
-      isSaved: true
-    }
-  ];
-  const [isLoading, setIsLoading] = useState(false);
+function Movies(props) {
+  const {
+    movies,
+    canLoadMore,
+    onLoadMore,
+    onSearch,
+    onSave,
+    savedFilter,
+    messages,
+  } = props;
+  const { requestStatus } = useContext(RequestStatusContext);
 
   return (
-    <>
-      <SearchForm handleIsLoading={setIsLoading}/>
+    <main>
+      <SearchForm
+        onSubmit={onSearch}
+        savedFilter={savedFilter}
+        queryRequiredMsg={messages.queryRequiredMsg}
+      />
       <section className="page__section movies">
-        {isLoading && (<Preloader/>)}
-        {!isLoading && (<><MoviesCardList cards={defaultMovies}/>
-          <button className="movies__more-btn" type="button">Еще</button>
-        </>)}
+        {requestStatus.isError && (
+          <p className="movies__search-results-msg">{requestStatus.message}</p>
+        )}
+        {requestStatus.isRunning ? (
+          <Preloader />
+        ) : movies.length > 0 && savedFilter.query.length > 0 ? (
+          <>
+            <MoviesCardList cards={movies} onSave={onSave} keyName={'id'}/>
+            {canLoadMore && (
+              <button className="movies__more-btn" type="button" onClick={onLoadMore}>
+                Еще
+              </button>
+            )}
+          </>
+        ) : (
+          savedFilter.query.length > 0 && (
+            <p className="movies__search-results-msg">
+              {messages.noResultsMSG}
+            </p>
+          )
+        )}
       </section>
-    </>
+    </main>
   );
 }
 
 export default Movies;
+
+Movies.propTypes = {
+  canLoadMore: PropTypes.bool,
+  messages: PropTypes.object,
+  movies: PropTypes.array,
+  onLoadMore: PropTypes.func,
+  onSave: PropTypes.func,
+  onSearch: PropTypes.func,
+  savedFilter: PropTypes.object
+}
