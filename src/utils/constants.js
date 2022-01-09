@@ -1,4 +1,3 @@
-export const REG_EXP_TOKEN_SET = /^(.*;)?\s*isTokenSet\s*=\s*[^;]+(.*)?$/;
 export const URL_REGEX = /^((https?):\/\/)?(www.)?[a-z0-9-.]+\.[a-z]+(\/[a-zA-Z0-9#-._~:/?#[\]@!$'()*+,;=]+\/?)*$/;
 export const MOVIES_FILTER_ITEM = 'moviesFilter';
 export const FILTERED_MOVIES_STATE_ITEM = 'filteredMoviesData';

@@ -20,7 +20,6 @@ import {
   MAIN_API_PROFILE_SAVED_MSG,
   MOVIE_API_ERROR_MSG,
   MOVIES_FILTER_ITEM,
-  REG_EXP_TOKEN_SET,
   SEARCH_NO_RESULTS_MSG,
   SEARCH_QUERY_REQUIRED_MSG,
   URL_REGEX,
@@ -475,25 +474,21 @@ function App() {
   }, [windowWidth]);
 
   useEffect(() => {
-    if (document.cookie.match(REG_EXP_TOKEN_SET)) {
-      mainApi
-        .checkToken()
-        .then((data) => {
-          setUserContext({
-            isLoggedIn: true,
-            currentUser: {
-              name: data.name,
-              email: data.email,
-            },
-          });
-        })
-        .catch((err) => console.log(err))
-        .finally(() => {
-          setIsAuthChecking(false);
+    mainApi
+      .checkToken()
+      .then((data) => {
+        setUserContext({
+          isLoggedIn: true,
+          currentUser: {
+            name: data.name,
+            email: data.email,
+          },
         });
-    } else {
-      setIsAuthChecking(false);
-    }
+      })
+      .catch((err) => console.log(err))
+      .finally(() => {
+        setIsAuthChecking(false);
+      });
     // Если добавить в зависимости будет постоянный ре-рендер.
     // https://github.com/remix-run/react-router/issues/8349
     // eslint-disable-next-line
