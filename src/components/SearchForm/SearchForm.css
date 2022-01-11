@@ -22,6 +22,7 @@
   color: #A0A0A0;
   transition: outline-color .5s;
 }
+
 .search-form__input:focus {
   outline-color: #2BE080;
 }
@@ -41,6 +42,10 @@
   cursor: pointer;
   opacity: 1;
   transition: opacity 0.5s;
+}
+
+.search-form__btn:disabled {
+  background: #A0A0A0;
 }
 
 .search-form__btn:hover {
@@ -100,6 +105,10 @@
 
 input:checked + .search-form__slider {
   background-color: #2BE080;
+}
+
+input:disabled + .search-form__slider {
+  background: #A0A0A0;
 }
 
 input:checked + .search-form__slider:before {

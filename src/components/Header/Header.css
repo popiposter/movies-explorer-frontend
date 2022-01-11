@@ -148,7 +148,7 @@
 }
 
 .header__menu {
-  z-index: 1;
+  z-index: 20;
 }
 
 .header__drawer-menu {

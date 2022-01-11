@@ -6,8 +6,10 @@
 }
 
 .movies__image {
-  min-height: 151px;
+  height: 151px;
   width: 100%;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
 }
 
 .movies__description {

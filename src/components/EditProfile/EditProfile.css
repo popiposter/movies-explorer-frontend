@@ -1,0 +1,18 @@
+.edit-profile {
+  font-family: 'Inter', Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  min-height: calc(100vh - 74px);;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 385px) {
+  .edit-profile {
+    padding: 56px 30px 30px;
+    justify-content: space-between;
+  }
+}
